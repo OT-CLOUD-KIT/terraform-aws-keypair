@@ -1,33 +1,3 @@
-Keypair Moduel
-______________
-
-## Usage
-_________________
-
-```hcl
-
-module "key_pair" {
-  source                = "./KeyPair"
-  create_key_pair       = var.create_key_pair
-  create_private_key    = var.create_private_key
-  private_key_algorithm = var.private_key_algorithm
-  private_key_rsa_bits  = var.private_key_rsa_bits
-  key_name              = var.key_name
-  key_name_prefix       = var.key_name_prefix
-  public_key            = var.public_key
-  path                  = var.path
-  s3_bucket_name        = var.s3_bucket_name
-  s3_path               = var.s3_path
-  tags                  = var.tags
-}
-
-```
-
-## Variables
-________________
-
-```hcl
-
 
 variable "create_private_key" {
   description = "enable private key creation"
@@ -86,7 +56,7 @@ variable "path" {
 variable "s3_path" {
   description = "value"
   type = string
-  default = "."
+  default = "/"
 }
 
 variable "tags" {
@@ -94,5 +64,3 @@ variable "tags" {
   type = map(string)
   default = { }
 }
-
-```
